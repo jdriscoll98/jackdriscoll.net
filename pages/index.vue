@@ -1,32 +1,46 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">jackdriscoll.net</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
+  <div>
+    <!-- HOME -->
+    <div class="home bg-primary flex justify-center items-center flex-col">
+      <h1 class="text-6xl text-white font-bold">Jack Driscoll</h1>
+      <h6 class="text-xl text-white font-semibold">Web Developer</h6>
+      <a
+        href="#about"
+        class="view-work mt-4 text-white border-white text-2xl p-3 border-white border-2 shadow-xl rounded-md focus:outline-none"
+      >
+        View My Work
+      </a>
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+      <div class="wave wave4"></div>
+    </div>
+    <div id="about" class="about flex">
+      <div class="nav shadow-md h-16 min-w-full">
+        <div
+          class="nav-title self-start font-semibold text-xl p-4 text-primary"
         >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+          Jack Driscoll
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        })
+      })
+    })
+  },
+}
 </script>
 
 <style>
@@ -35,34 +49,73 @@ export default {}
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+}
+.home {
+  width: 100%;
+  height: 100vh;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.view-work {
+  transition: background-color 0.2s ease;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.view-work:hover {
+  color: #3586ff;
+  background-color: white;
 }
-
-.links {
-  padding-top: 15px;
+.about {
+  width: 100%;
+  height: 100vh;
+  background: white;
+}
+div .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('/wave.png');
+  background-size: 1000px 100px;
+  z-index: 1000;
+}
+div .wave.wave1 {
+  animation: animate 25s linear infinite;
+  z-index: 4;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+div .wave.wave2 {
+  animation: animate 20s linear infinite;
+  animation-direction: reverse;
+  z-index: 3;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+div .wave.wave3 {
+  animation: animate 10s linear infinite;
+  z-index: 2;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+div .wave.wave4 {
+  animation: animate 5s linear infinite;
+  animation-direction: reverse;
+  z-index: 1;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
 }
 </style>
