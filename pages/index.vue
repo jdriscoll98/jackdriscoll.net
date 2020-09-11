@@ -30,7 +30,7 @@
         Jack Driscoll
       </a>
       <div id="myLinks" class="hidden sm:inline-block">
-        <a class="block sm:inline-block" href="#news">News</a>
+        <a class="block sm:inline-block" href="#work">My Work</a>
         <a class="block sm:inline-block" href="#contact">Contact</a>
         <a class="block sm:inline-block" href="#about">About</a>
       </div>
@@ -38,15 +38,85 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <div id="about" class="about flex flex-col bg-white min-w-full">
-      <div class="heading h-32 mt-16 flex w-1/2 mx-auto">
-        <h1
-          class="text-3xl md:text-5xl font-semibold text-primary self-center mx-auto"
-        >
-          About Me
-        </h1>
+    <div class="content h-screen">
+      <div id="about" class="about flex flex-col bg-white min-w-full">
+        <div class="heading h-24 sm:h-32 mt-12 flex w-1/2 mx-auto">
+          <h1
+            class="text-3xl md:text-5xl font-semibold text-primary self-center mx-auto"
+          >
+            About Me
+          </h1>
+        </div>
+        <div class="flex flex-col bg-primary sm:flex-row sm:justify-around">
+          <div class="md:w-4/12 w-full flex text-center py-12">
+            <p class="text-white font-bold px-12">
+              Hi, my name is Jack and I am an aspiring web developer.
+              <br /><br />
+              I may not have much here now, but I sure will soon.
+              <br />
+              <br />Give me a chance and I promise your project will be done to
+              the level of a top tier professional.
+            </p>
+          </div>
+          <div class="md:w-4/12 w-full bg-primary flex flex-col py-5">
+            <h1 class="text-xl text-white font-bold mx-auto pb-5">
+              Convinced already?
+            </h1>
+            <form>
+              <div class="form-group flex justify-evenly my-2">
+                <label class="text-white font-bold text-xl">Name</label>
+                <input class="rounded-lg w-1/2" />
+              </div>
+              <div class="form-group flex justify-evenly my-2">
+                <label class="text-white font-bold text-xl">Email</label>
+                <input class="rounded-lg w-1/2" />
+              </div>
+              <div class="form-group flex justify-evenly my-2">
+                <label class="text-white font-bold text-xl">Topic</label>
+                <select class="rounded-lg w-1/2">
+                  <option>Website Design</option>
+                  <option>Web / Mobile Application</option>
+                  <option>Design System</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group flex justify-evenly my-4">
+                <button
+                  class="bg-white text-primary font-bold border-1-primary w-1/2 p-5 rounded-full"
+                >
+                  Request me!
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="md:w-1/2 w-full rounded-full flex-row bg-primary py-16"></div>
+      <div
+        id="work"
+        class="work flex flex-col justify-evenly sm:flex-row min-w-full"
+      >
+        <div
+          class="card w-full sm:w-4/12 flex flex-rol sm:flex-row m-1 h-full border-primary border-2 rounded-lg"
+        >
+          <div class="card-title w-full text-center">
+            <h1 class="text-2xl font-extrabold text-primary">Work</h1>
+          </div>
+        </div>
+        <div
+          class="card w-full sm:w-4/12 flex flex-rol sm:flex-row m-1 h-full border-primary border-2 rounded-lg"
+        >
+          <div class="card-title w-full text-center">
+            <h1 class="text-2xl font-extrabold text-primary">Projects</h1>
+          </div>
+        </div>
+        <div
+          class="card w-full sm:w-4/12 flex flex-rol sm:flex-row m-1 h-full border-primary border-2 rounded-lg"
+        >
+          <div class="card-title w-full text-center">
+            <h1 class="text-2xl font-extrabold text-primary">Education</h1>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -128,7 +198,6 @@ export default {
 }
 .about {
   width: 100%;
-  height: 100vh;
   background: white;
 }
 div .wave {
